@@ -102,10 +102,32 @@
             text-align: center;
             width: 280px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .service h3 {
             margin: 0.5rem 0;
             color: #003366;
+        }
+        .service p.brief {
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+        .service .full-content {
+            display: none;
+            padding-top: 10px;
+        }
+        .service:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .service:hover .brief {
+            opacity: 0;
+        }
+        .service:hover .full-content {
+            display: block;
+            opacity: 1;
         }
         footer {
             background-color: #333333;
@@ -169,23 +191,38 @@
         <div class="services">
             <div class="service">
                 <h3>Website Development</h3>
-                <p>Modern, responsive, and visually stunning websites tailored to your needs.</p>
+                <p class="brief">Modern, responsive, and visually stunning websites tailored to your needs.</p>
+                <div class="full-content">
+                    <p>We specialize in creating visually stunning, user-friendly websites that offer an exceptional experience across all devices. Whether it's a simple blog, corporate site, or a complex e-commerce platform, we ensure seamless functionality and fast performance. Our custom designs reflect your brand and business goals, driving user engagement. From planning and design to deployment and ongoing support, we provide comprehensive solutions to meet your online needs.</p>
+                </div>
             </div>
             <div class="service">
                 <h3>Mobile App Development</h3>
-                <p>User-friendly and high-performing mobile apps for Android and iOS platforms.</p>
+                <p class="brief">User-friendly and high-performing mobile apps for Android and iOS platforms.</p>
+                <div class="full-content">
+                    <p>We design and develop mobile apps that are intuitive, fast, and engaging, ensuring a smooth user experience. Our team focuses on creating apps that perform flawlessly across various devices and platforms, whether it's Android or iOS. We prioritize speed, reliability, and user-friendly interfaces to meet your business needs. From concept to deployment, we deliver mobile solutions that drive results and enhance user engagement.</p>
+                </div>
             </div>
             <div class="service">
                 <h3>Customer Support</h3>
-                <p>Dedicated 24/7 customer service solutions to enhance user satisfaction.</p>
+                <p class="brief">Dedicated 24/7 customer service solutions to enhance user satisfaction.</p>
+                <div class="full-content">
+                    <p>We offer comprehensive support services, ensuring that your customers receive prompt assistance, resolving issues quickly and efficiently to ensure satisfaction.</p>
+                </div>
             </div>
             <div class="service">
                 <h3>Projects</h3>
-                <p>End-to-end project management and execution for a seamless experience.</p>
+                <p class="brief">End-to-end project management and execution for a seamless experience.</p>
+                <div class="full-content">
+                    <p>From inception to completion, we manage every aspect of your project, ensuring it's delivered on time and within budget. Our team works closely with you to define clear objectives, timelines, and deliverables. We focus on maintaining high standards while adapting to any changes or challenges that arise. With our expertise in project management, we ensure that your project meets all requirements and exceeds expectations.</p>
+                </div>
             </div>
             <div class="service">
                 <h3>Documentation/Resume Writing/Presentations</h3>
-                <p>Professional documents, standout resumes, and impactful presentations.</p>
+                <p class="brief">Professional documents, standout resumes, and impactful presentations.</p>
+                <div class="full-content">
+                    <p>We create high-quality, polished documents, resumes, and presentations to help you make a strong impression, whether it's for a job, project, or business proposal.</p>
+                </div>
             </div>
         </div>
     </section>
