@@ -138,44 +138,7 @@
             color: #007bff;
         }
     </style>
-    <!-- Supabase SDK -->
-    <script type="module">
-      import { createClient } from 'https://cdn.supabase.io/js/1.35.0/supabase.js';
-
-      // Your Supabase URL and API key
-      const supabaseUrl = 'https://qmkmkhwbkwyududfeyhh.supabase.co';
-      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFta21raHdia3d5dWR1ZGZleWhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzczOTQyMjMsImV4cCI6MjA1Mjk3MDIyM30.ceQVH3-xTGcnZ7Oyo87f0Dv14C7F2TaNgeU3PbJYii4';
-      const supabase = createClient(supabaseUrl, supabaseKey);
-
-      // Handle form submission
-      async function submitForm(event, formId) {
-        event.preventDefault();
-
-        const name = document.querySelector(`#${formId} #name`).value;
-        const email = document.querySelector(`#${formId} #email`).value;
-        const phone = document.querySelector(`#${formId} #phone`).value;
-        const message = document.querySelector(`#${formId} #message`).value;
-
-        try {
-          // Insert the form data into the Supabase table
-          const { data, error } = await supabase
-            .from('connectwithus')  // Your table name
-            .insert([
-              { name: name, email: email, phone: phone, message: message, timestamp: new Date() }
-            ]);
-
-          if (error) {
-            throw error;
-          }
-
-          alert('Message sent successfully!');
-          document.querySelector(`#${formId}`).reset();
-        } catch (error) {
-          console.error('Error submitting form: ', error);
-          alert('Something went wrong, please try again later.');
-        }
-      }
-    </script>
+    
 </head>
 <body>
     <div class="overlay"></div>
